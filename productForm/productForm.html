@@ -12,51 +12,32 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <!-- font stylesheets -->
     <link href="https://fonts.googleapis.com/css?family=Playball" rel="stylesheet">
+    <!-- Js -->
     <script type="text/javascript" src="productForm.controller.js"></script>
-    <style type="text/css">
-    #right{
-        float: right;
-    }
-    #left{
-        float: left;
-    }
-    *{
-        margin-top: 5px;
-    }	
-    .red{
-        color: white;
-        font-size:20px;
-        background-color:#E35885;
-        padding: 3%;
-        font-weight: bold;
-    }
-    .green{
-        color: white;
-        font-size:20px;
-        background-color:#8EC16D;
-        padding: 3%;
-        font-weight: bold;
-    }
-    </style>
+    <!-- stylesheets -->
+   <link rel="stylesheet" type="text/css" href="productFormStylesheet.css">
+
+    
+   
 </head>
 <body ng-controller="ctrl">
     <div class="row">
-        <div ng-style="mainDiv" class="col-sm-5">
-            <div class="row" ng-style="services" >
+        <div id="mainDiv" class="col-sm-5">
+            <div class="row" id="services" >
                     <div class="col-sm-12" >Services</div>
             </div>
             <br>
             <div class="row" ng-init="item.isGreen=false" ng-class="{'green' : item.isGreen,'red':!item.isGreen}" style="cursor:pointer"
             	ng-click="item.isGreen=!item.isGreen; myFunc(item.value,item.id)" ng-repeat="item in realName">
-                <div class="col-sm-9"  id="left"> {{item.name}}</div>
+                <div class="col-sm-9" id="left"> {{item.name}}</div>
                 <div class="col-sm-3" id="right"> {{item.value | currency}}</div>
             </div>
             
             <hr style="margin-left: -3%; margin-right: -3%;" />
 
-            <div class="row"  ng-style="bottom" >
-                <div class="col-sm-9"  ng-style="left"> Total:</div> 
-                <div class="col-sm-3" ng-style="right"> {{total  | currency}}</div>
+            <div class="row" id="bottom" >
+                <div class="col-sm-9" id="left"> Total:</div> 
+                <div class="col-sm-3" id="right"> {{total  | currency}}</div>
             </div>
         </div>
     </div>

@@ -19,30 +19,4 @@ app.controller("ctrl", function($scope) {
             $scope.data[id]=null;
         }
     }
-	
-
-// style for body
-    $scope.mainDiv = {
-        "margin-left": "5%",
-        "margin-right":"5%",
-        "padding-left": "5%",
-        "padding-right": "5%",
-        "padding-top": "2%",
-        "padding-bottom": "5%",
-        "background-color":"#61A1BC",
-    }
-    $scope.services={
-        "font-family":" 'Playball', cursive",
-        "color": "white",
-        "font-size": "54px",
-        "text-align":"center"
-	}
-    $scope.bottom={			
-        "color": "white",
-        "font-size": "20px",
-        "padding-left": "3%",
-        "margin-bottom":"-3%",
-        "font-weight": "bold"
-    }
-
 });
