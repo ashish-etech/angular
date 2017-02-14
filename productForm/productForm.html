@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html ng-app="productForm">
+<head>
+    <title>Assignment3</title>
+    <!-- bootstrap -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- angular -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <!-- font stylesheets -->
+    <link href="https://fonts.googleapis.com/css?family=Playball" rel="stylesheet">
+    <!-- Js -->
+    <script type="text/javascript" src="productForm.controller.js"></script>
+    <!-- stylesheets -->
+   <link rel="stylesheet" type="text/css" href="productFormStylesheet.css">
+
+    
+   
+</head>
+<body ng-controller="ctrl">
+    <div class="row">
+        <div id="mainDiv" class="col-sm-5">
+            <div class="row" id="services" >
+                    <div class="col-sm-12" >Services</div>
+            </div>
+            <br>
+            <div class="row" ng-init="item.isGreen=false" ng-class="{'green' : item.isGreen,'red':!item.isGreen}" style="cursor:pointer"
+            	ng-click="item.isGreen=!item.isGreen; myFunc(item.value,item.id)" ng-repeat="item in realName">
+                <div class="col-sm-9" id="left"> {{item.name}}</div>
+                <div class="col-sm-3" id="right"> {{item.value | currency}}</div>
+            </div>
+            
+            <hr style="margin-left: -3%; margin-right: -3%;" />
+
+            <div class="row" id="bottom" >
+                <div class="col-sm-9" id="left"> Total:</div> 
+                <div class="col-sm-3" id="right"> {{total  | currency}}</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
