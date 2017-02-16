@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html ng-app="assignment5">
+<head>
+    <title>Assignment3</title>
+    <!-- bootstrap -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- angular -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <!-- Js -->
+    <script type="text/javascript" src="assignment.controller.js"></script>
+    <!-- stylesheets -->
+    <link rel="stylesheet" type="text/css" href="assignment5.css">
+
+       
+</head>
+<body ng-controller="ctrl">
+<div class="row">
+    <div id="mainDiv" class="col-sm-4">
+        <form class="col-sm-12">
+            <div class="form-group">
+                <label>First Value:</label>
+                <input type="text" class="form-control" ng-model="value1" id="v1" ng-keypress="validate($event)" ng-mousedown="clear1()" autocomplete="off" >
+            </div>
+            <div class="form-group">
+                <label>Second Value:</label>
+                <input type="text" class="form-control" ng-model="value2" ng-change="check()" ng-keypress="validate($event)" ng-mousedown="clear2()" autocomplete="off" >
+            </div>
+            <div id="alertDiv">
+                <div ng-show="Obj.alert1" id="alert" class="alert alert-danger">Only Integer Value allowed!!</div>
+                <div ng-show="Obj.alert2" id="alert" class="alert alert-danger">Only String Value allowed!!</div>
+                <div ng-show="Obj.alert3" id="alert" class="alert alert-danger">Plz fill first textbox!!</div>
+                <div ng-show="Obj.alert"  id="alert" class="alert alert-danger" >You have not entered any value!!</div>
+                <div ng-show="Obj.alert4"  id="alert" class="alert alert-success" >Data Updated Successfully</div>
+            </div>
+              
+            <button id="btn2" class="btn btn-default" ng-click="add()" >Update</button>
+            <button id="btn2" class="btn btn-default" ng-click="clear()" >Clear</button>
+        </form>
+        
+        <div id="display" class="col-sm-12">
+            <br/>
+            Result Will be displayed below:
+            <p>{{ans}}</p>
+        </div>
+        <br>
+        <br>      
+    </div>
+</div>
+</body>
+</html>
