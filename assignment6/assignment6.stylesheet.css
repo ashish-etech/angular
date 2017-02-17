@@ -1,0 +1,23 @@
+#mainDiv{
+    padding: 5%;
+    margin: 2%;
+    background-color: skyblue;
+}
+.first{
+    background-color: #E47F72;
+    padding: 3%;
+    margin: 2%;
+    border:2px solid #BBC02A;
+}
+.second{
+    background-color: #BBC02A;
+    padding: 3%;
+    margin: 2%;
+    border:2px solid #E47F72;
+}
+h4{
+    color: white;
+    text-align: center;
+    text-decoration: underline;
+    font-weight: bold;
+}
