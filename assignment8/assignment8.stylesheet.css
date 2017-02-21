@@ -1,0 +1,15 @@
+#mainDiv{
+    padding: 2%;
+    margin: 2%;
+    background-color: skyblue;
+}
+#first{
+    border: 1px solid grey;
+    padding: 2%;
+    margin: 2%;
+}
+#second{
+    padding: 2%;
+    margin: 2%;
+    border: 1px solid grey;
+}

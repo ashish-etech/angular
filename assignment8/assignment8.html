@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html ng-app="Assignment8" >
+<head>
+    <title>Assignment 7</title>
+    <!-- bootstrap -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- angular -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <!-- Js -->
+    <script type="text/javascript" src="assignment8.controller.js"></script>
+    <!-- stylesheets -->
+    <link rel="stylesheet" type="text/css" href="assignment8.stylesheet.css">
+
+</head>
+<body >
+    <div class="row">
+        <!-- div for service method -->
+        <div id="mainDiv" class="col-sm-4">
+        <h4>Passing data using service </h4>
+            <div id="first" class="col-sm-12" ng-controller="controller1">Div1
+                <input class="form-control" type="text" ng-model="dataShowService" ng-change="change(dataShowService)">
+            </div>
+            <div id="second" class="col-sm-12" ng-controller="controller2">Div2
+                <input class="form-control" type="text" ng-model="dataShowService" ng-change="change(dataShowService)">
+            </div>
+        </div>
+
+
+        <!-- div for factory method -->
+        <div id="mainDiv" class="col-sm-4">
+        <h4>Passing data using Factory method </h4>
+            <div id="first" class="col-sm-12" ng-controller="controller3">Div1
+                <input class="form-control" type="text" ng-model="dataShowFactory" ng-change="change(dataShowFactory)">
+            </div>
+            <div id="second" class="col-sm-12" ng-controller="controller4">Div2
+                <input class="form-control" type="text" ng-model="dataShowFactory" ng-change="change(dataShowFactory)">
+            </div>
+        </div>
+        
+        
+    </div>
+</body>
+</html>
