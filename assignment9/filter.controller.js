@@ -43,7 +43,8 @@ app.controller("assignment7Controller", function($scope) {
             "Age"   : "23 Years"
         }
     ]
- $scope.reverse = false; 
+    
+    $scope.reverse = false; 
     $scope.orderByMe = function(Obj) {
         $scope.myOrderBy = Obj;
         if($scope.reverse){
