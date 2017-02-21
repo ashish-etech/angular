@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html ng-app="Assignment7" >
+<head>
+    <title>Assignment 7</title>
+    <!-- bootstrap -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- angular -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <!-- Js -->
+    <script type="text/javascript" src="filter.controller.js"></script>
+    <!-- stylesheets -->
+    <link rel="stylesheet" type="text/css" href="filter.stylesheet.css">
+
+</head>
+<body >
+    <div class="row">
+    
+        <div id="mainDiv" class="col-md-10">
+        <div class="col-md-3" id="searchDiv">
+            <input type="text" class="form-control" ng-model="search" placeholder="Search Here" ng-change="change()"/><br>
+        </div>
+            
+            <table ng-controller="assignment7Controller" class="table">
+                <tr class="success">
+                    <th ng-click="orderByMe('Index')">Index 
+                        <span ng-show="myOrderBy === 'Index'" ng-class="{reverse: reverse,notReverse: !reverse}"></span>
+                    </th>
+                    <th ng-click="orderByMe('Name')">Name 
+                        <span ng-show="myOrderBy === 'Name'" ng-class="{reverse: reverse,notReverse: !reverse}"></span>
+                    </th>
+                    <th ng-click="orderByMe('Email')">Email 
+                        <span ng-show="myOrderBy === 'Email'" ng-class="{reverse: reverse,notReverse: !reverse}"></span>
+                    </th>
+                    <th ng-click="orderByMe('Age')">Age 
+                        <span ng-show="myOrderBy === 'Age'" ng-class="{reverse: reverse,notReverse: !reverse}"></span>
+                    </th>
+                </tr>
+                <tr ng-repeat="Obj in list   | orderBy:myOrderBy: reverse | filter : search" ng-class="($index+1) % 2 == 0? 'even' : 'odd'">
+                    <td>{{Obj.Index}}</td>
+                    <td>{{Obj.Name}}</td>
+                    <td>{{Obj.Email}}</td>
+                    <td>{{Obj.Age}}</td>
+                </tr>
+                <tr ng-show="(list |filter:search).length == 0" >
+                    <td colspan="4" id="notFound" class="alert alert-danger"><strong>Sorry !!</strong> Data Not Found</td>
+                </tr>
+        </table>
+
+
+        </div>
+    </div>
+    
+</body>
+</html>
