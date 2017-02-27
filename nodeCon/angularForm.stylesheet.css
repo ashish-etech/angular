@@ -1,5 +1,14 @@
 #mainDiv{
-    padding: 2%;
-    margin: 2%;
+    padding-top: 30px;
+    padding-left: 5%;
+    padding-right:5%;
     background-color: skyblue;
+    color: black;
+    
+}
+.header{
+    font-weight: bold;
+    color: brown;
+    text-align: center;
+    text-decoration:underline;
 }

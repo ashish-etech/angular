@@ -20,7 +20,7 @@
 <body  ng-controller="angularFormController">
 <div class="row">
     <div id="mainDiv" class="col-md-3">
-    <h4 class="">Registration</h4>
+    <h4 class="header">Registration</h4>
         <form name="userForm" ng-submit="submitForm(userForm.$valid)" novalidate>
             <div class="form-group" align="left" ng-class="{'has-error':userForm.first_name.$invalid && !userForm.first_name.$pristine}">
                 <label for="firstName">First Name:</label>
@@ -57,7 +57,7 @@
             <button type="submit" class="btn btn-success"  >Submit</button>
         </form><br>
          <div ng-show="Obj.alertSuccess"  id="alert" class="alert alert-success" >Data Updated Successfully</div>
-        <div ng-show="Obj.validationFailed"  id="alert" class="alert alert-danger" >All Field Required</div>
+        <div ng-show="Obj.validationFailed"  id="alert" class="alert alert-danger" >All Fields Required</div>
     </div>
  </div>   
 </body>
