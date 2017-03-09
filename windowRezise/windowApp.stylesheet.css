@@ -1,0 +1,14 @@
+body{ 
+	background-color: skyblue ;
+	color: green;
+}
+h5{
+	color: #333;
+}
+.container{
+	text-align: center;
+	margin-top: 100px;
+	padding: 2%;
+	background-color:#ccc;
+	max-width: 300px;
+}
