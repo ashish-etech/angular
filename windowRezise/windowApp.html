@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html ng-app="windowApp">
+<head>
+<title>custom directive</title>
+    <link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css"/>
+    <link rel="stylesheet" href="windowApp.stylesheet.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.1.4/angular.min.js"></script>
+    <script src="windowApp.controller.js"></script>
+</head>
+<body ng-controller="windowAppController"> 
+<div class="container">
+    <div resize>
+        <h5>Window resize using Custom directive </h5>
+       
+            Window Height: {{height}} <br />
+            Window Width: {{width}} <br />
+        </div> 
+    </div>
+</body>
+</html>
