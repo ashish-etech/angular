@@ -5,7 +5,12 @@ app.controller('stopWatchController',function($scope){
 app.directive('stopwatch', function($timeout) {
     return {
         restrict: 'E',
-        templateUrl:'template.html',
+        template: '<div class="mainBody">'+
+                '<div class="timer">{{hours|numberpad:2}}:{{minutes|numberpad:2}}:{{seconds|numberpad:2}}:{{miliseconds|numberpad:2}}</div>'+
+                '<button class="btn btn-success" ng-click="start()" ng-disabled="button">START</button>'+
+                '<button class="btn btn-danger"  ng-click="stop()" ng-disabled="!button">STOP</button>'+
+                '<button class="btn btn-primary" ng-click="reset()" ng-disabled="button">RESET</button>'+
+                ' </div>    ' ,
         link: function($scope) {
             var timeoutId;
             $scope.hours=0;
