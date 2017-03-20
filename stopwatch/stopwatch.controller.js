@@ -1,7 +1,5 @@
 var app=angular.module('stopWatchApp', []);
-app.controller('stopWatchController',function($scope){
 
-});
 app.directive('stopwatch', function($timeout) {
     return {
         restrict: 'E',
