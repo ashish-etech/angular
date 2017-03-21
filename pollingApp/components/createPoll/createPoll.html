@@ -3,8 +3,9 @@
         <div class="col-md-2">
             <div ng-include src="'menuTemplate.html'"></div>
         </div>
-        <div class="modal-dialog">
-            <div class="col-md-12 col-md-offset-2">
+        
+        <div class="col-md-8">
+            <div class="col-md-10 col-md-offset-2">
                 <center><h3>Create New Poll</h3></center>
                 <div ng-show="alertSuccess" class="alert alert-success">New Poll created!</div>
                 <div ng-show="alertError" class="alert alert-danger"> {{errorMsg}}</div>

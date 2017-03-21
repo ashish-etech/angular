@@ -1,16 +1,16 @@
-<div class="containerView">
+<div class="container">
     <div class="row">
         <div class="col-md-2">
             <div ng-include src="'menuTemplate.html'"></div>
         </div>
 
-        <div class="modal-dialog">
-			<div class="col-md-12 col-md-offset-2">
+        <div class="col-md-8">
+			<div class="col-md-10 col-md-offset-2">
 				<center>
 				<h4 style="padding-top: 10px;"><b>View Poll Data</b></h4></center>
 				<table class="table" dir-paginate="data in record | itemsPerPage:2">
 					<tr>
-						<th colspan="3"  class="success">Question. &nbsp;<span>{{data.title}}</span> </th>
+						<td colspan="3"  class="success"><b>Question. &nbsp;</b>{{data.title}} </th>
 					</tr>
 					<tr class="info">
 						<th class="col-sm-9">Options</th>
@@ -40,10 +40,3 @@
         </div>
     </div>
 </div>
-    
-    <style type="text/css">
-    	span{
-    		font-weight:  normal;
-
-    	}
-    </style>
