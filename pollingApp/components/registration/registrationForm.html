@@ -1,0 +1,28 @@
+<div class="modal-dialog">
+    <div class="col-sm-6 col-sm-offset-1">
+        <center><h3>User Registration</h3></center>
+        <div ng-show="alertsuccess" class="alert alert-success"> Registration Success!!</div>
+        <div ng-show="alerterror" class="alert alert-danger"> {{errmsg}}</div>
+        <form name="form" ng-submit="submit(user)" novalidate>
+            
+            <div class="form-group" ng-class="{ 'has-error' : form.username.$invalid && !form.username.$pristine }">
+                <label for="username">User Name</label>
+                <input type="text" class="form-control" name="username" ng-model="user.username" ng-change="change()" required>
+                <span ng-show="form.username.$dirty && form.username.$error.required" class="help-block">Please enter Username</span>
+            </div>
+            <div class="form-group" ng-class="{ 'has-error' : form.password.$invalid && !form.password.$pristine }">
+                <label for="password"> Password</label>
+                <input type="text" class="form-control" name="password" ng-model="user.password" ng-change="change()" required>
+                <span ng-show="form.password.$dirty && form.password.$error.required" class="help-block">Please enter Password</span>
+            </div>
+            
+            <div class="form-group" ng-class="{ 'has-error' : form.role.$invalid && !form.role.$pristine }">
+                <label for="role">Role</label>
+                <input type="text" class="form-control" name="role" ng-model="user.role" ng-change="change()" required>
+                <span ng-show="form.role.$dirty && form.role.$error.required" class="help-block">Please enter Your role</span>
+            </div>
+            <button type="submit" ng-init="display()" class="btn btn-success" ng-disabled="form.$invalid">Submit <span class="fa fa-arrow-right"></span> </button>
+            <a ui-sref="login" class="pull-right padding">Log In</a>
+        </form>
+    </div>
+</div>
