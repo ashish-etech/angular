@@ -1,0 +1,64 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-2">
+            <div ng-include src="'menuTemplate.html'"></div>
+        </div>
+        
+        <div class="col-md-8">
+            <div class="col-md-10 col-md-offset-2">
+                <center><h3>Create New Poll</h3></center>
+                <div ng-show="alertSuccess" class="alert alert-success">New Poll created!</div>
+                <div ng-show="alertError" class="alert alert-danger"> {{errorMsg}}</div>
+                <form name="form" ng-submit="submit()" novalidate class="form-horizontal">
+                    
+                    <label class="control-label col-sm-2" for="question"> Question:</label>
+                    <div class="col-sm-10">
+                        <div class="form-group" ng-class="{ 'has-error' : form.question.$invalid && !form.question.$pristine }">
+                            <input type="text" class="form-control" name="question" ng-model="object.ques" required/>
+                            <span ng-show="form.question.$dirty && form.question.$error.required" class="help-block">Please Enter a Question</span>
+                        </div>                        
+                    </div>
+                    
+                    <label class="control-label col-sm-2" for="option1"> Option1:</label>
+                    <div  class="col-sm-10">
+                        <div class="form-group" ng-class="{ 'has-error' : form.option1.$invalid && !form.option1.$pristine }">
+                            <input type="text" class="form-control" name="option1" ng-model="object.opt1" required/>
+                             <span ng-show="form.option1.$dirty && form.option1.$error.required" class="help-block">Please enter first option</span>
+                        </div>                       
+                    </div>
+                    
+                    <label class="control-label col-sm-2" for="option2"> Option2:</label>
+                    <div class="col-sm-10">
+                        <div class="form-group" ng-class="{ 'has-error' : form.option2.$invalid && !form.option2.$pristine }">
+                            <input type="text" class="form-control" name="option2" ng-model="object.opt2" required />
+                            <span ng-show="form.option2.$dirty && form.option2.$error.required" class="help-block">Please enter second option</span>
+                        </div>                        
+                    </div>
+                    
+                    <label class="control-label col-sm-2" for="option3"> Option3:</label>
+                    <div class="col-sm-10">
+                        <div class="form-group" ng-class="{ 'has-error' : form.option3.$invalid && !form.option3.$pristine }">
+                            <input type="text" class="form-control" name="option3" ng-model="object.opt3" required />
+                            <span ng-show="form.option3.$dirty && form.option3.$error.required" class="help-block">Please enter third option</span>
+                        </div>                        
+                    </div>
+                   
+                    <label class="control-label col-sm-2" for="option4"> Option4:</label>
+                    <div class="col-sm-10">
+                        <div class="form-group " ng-class="{ 'has-error' : form.option4.$invalid && !form.option4.$pristine }">
+                            <input type="text" class="form-control" name="option4" ng-model="object.opt4" required />
+                            <span ng-show="form.option4.$dirty && form.option4.$error.required" class="help-block">Please enter last option</span>
+                        </div>                        
+                    </div>
+
+                    <div class="form-group">        
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" align="" class="btn btn-primary" ng-disabled="form.$invalid">Submit </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+    
