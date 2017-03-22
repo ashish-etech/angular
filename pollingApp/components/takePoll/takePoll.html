@@ -9,34 +9,34 @@
                 <center>
                 <h4 style="padding-top: 10px;"><b>Take Poll</b></h4></center>
                 <table class="table" dir-paginate="data in record | itemsPerPage:2">
-                	<div ng-show="alerterror" class="alert alert-danger"> {{errMsg}}</div>
-                	<div ng-show="alertSuccess" class="alert alert-success">You voted "{{successMsg}}"</div>
+                    <div ng-show="alerterror" class="alert alert-danger"> {{errMsg}}</div>
+                    <div ng-show="alertSuccess" class="alert alert-success">You voted "{{successMsg}}"</div>
                     <tr>
                         <td colspan="2" class="success"><b>Question. &nbsp;</b>{{data.title}} </td>
                     </tr>
                     <tr class="active">
-						<td>
-							<input type="radio" name="Vote" ng-model="option" value="{{data.options[0].option}}" unchecked>&nbsp;{{data.options[0].option}}
-						<td>
+                        <td>
+                            <input type="radio" name="Vote" ng-model="option" value="{{data.options[0].option}}" unchecked>&nbsp;{{data.options[0].option}}
+                        <td>
                     </tr>
                     <tr class="active">
-						<td>
-                   			<input type="radio" name="Vote" ng-model="option" value="{{data.options[1].option}}" unchecked>&nbsp;{{data.options[1].option}}
+                        <td>
+                            <input type="radio" name="Vote" ng-model="option" value="{{data.options[1].option}}" unchecked>&nbsp;{{data.options[1].option}}
                        <td>
                     </tr>
                     <tr class="active">
                        <td>
-                       		<input type="radio" name="Vote" ng-model="option" value="{{data.options[2].option}}" unchecked>&nbsp;{{data.options[2].option}}
-                   		<td>
+                            <input type="radio" name="Vote" ng-model="option" value="{{data.options[2].option}}" unchecked>&nbsp;{{data.options[2].option}}
+                        <td>
                     </tr>
                     <tr class="active">
-                  		<td>
-                  			<input type="radio" name="Vote" ng-model="option" value="{{data.options[3].option}}" unchecked>&nbsp;{{data.options[3].option}}
-                  		<td>
+                        <td>
+                            <input type="radio" name="Vote" ng-model="option" value="{{data.options[3].option}}" unchecked>&nbsp;{{data.options[3].option}}
+                        <td>
                     </tr>
                     <tr class="active" width="100%">
                     	<td>
-                    		<input type="button" class="btn btn-primary" name="submit" value="submit" ng-click="submitVote(option,data)" ng-disabled="!option">
+                            <input type="button" class="btn btn-primary" name="submit" value="submit" ng-click="submitVote(option,data)" ng-disabled="!option">
                     	</td>
                     </tr>                    
                 </table>
