@@ -13,7 +13,6 @@ app.controller("loginController", function($scope, $localStorage, $state, getDat
                 $localStorage.token=response.data._id;
                 console.log(response)
                 $scope.form.$setPristine();
-                $scope.isChecked = false;
                 $state.go('createPoll');
             }else{
                  $scope.alertLoginError = true;
