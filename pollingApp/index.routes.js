@@ -29,4 +29,9 @@ app.config(function($stateProvider, $urlRouterProvider) {
             templateUrl: 'components/takePoll/takePoll.html',
             controller: 'takePollController',
         })
+        .state('voteSummary', {
+            url: '/voteSummary',
+            templateUrl: 'components/viewVote/voteSummary.html',
+            controller: 'voteSummaryController',
+        })
 })

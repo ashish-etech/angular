@@ -9,8 +9,6 @@
                 <center>
                 <h4 style="padding-top: 10px;"><b>Take Poll</b></h4></center>
                 <table class="table" dir-paginate="data in record | itemsPerPage:2">
-                	<div ng-show="alerterror" class="alert alert-danger"> {{errMsg}}</div>
-                	<div ng-show="alertSuccess" class="alert alert-success">You voted "{{successMsg}}"</div>
                     <tr>
                         <td colspan="2" class="success"><b>Question. &nbsp;</b>{{data.title}} </td>
                     </tr>

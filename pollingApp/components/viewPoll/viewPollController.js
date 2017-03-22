@@ -1,5 +1,5 @@
 var app = angular.module("angularForm");
-app.controller("viewPollController", function($scope, getDataFactory,$timeout) {
+app.controller("viewPollController", function($scope, getDataFactory) {
     $scope.record={}
 
     $scope.tableData = function() {

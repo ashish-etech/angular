@@ -4,11 +4,10 @@
     } 
     .col-md-10 {
         background-color: #00BCD4;
-        padding-bottom: 20px;
         padding-right: 50px;
         padding-left: 50px;
         padding-right: 50px;
-    }
+    }}
 
     h3 {
         padding-top: 2px;
@@ -22,13 +21,13 @@
         padding-left: 0px;
         color: black;
     }
-    ul{
+    .nav{
         list-style: none;
         font-weight: bold;
         font-size: 14px;
         background-color: #ddd;   
     }
-    li a{
+    .nav li a{
         background-color: skyblue;
         color: #020b38;
         border-bottom: 1px solid grey;
@@ -37,8 +36,22 @@
         border-right: 2px solid grey;
         height: 662px;
     }
-    li a:hover{ 
+    .nav li a:hover{ 
         cursor: pointer;
         text-decoration: none;
         color: darkblue;
+    }
+    .back{
+        list-style: none;
+        font-weight: bold;
+        font-size: 16px;
+        background-color: #ddd;
+        width: 150px;
+        margin-bottom: 20px;
+        padding: 1%;
+    }
+    .back a:hover{ 
+        cursor: pointer;
+        text-decoration: none;
+        color: green;
     }

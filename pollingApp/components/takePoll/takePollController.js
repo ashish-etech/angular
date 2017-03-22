@@ -1,8 +1,7 @@
 var app = angular.module("angularForm");
-app.controller("takePollController", function($scope, getDataFactory,$timeout) {
-    $scope.alerterror = false;
-    $scope.alertSuccess = false;
+app.controller("takePollController", function($scope, getDataFactory,$timeout,$state,$localStorage) {
     $scope.record={};
+    $scope.localToken=[];
 
     $scope.tableData = function() {
         url = '/list_polls';
@@ -12,7 +11,11 @@ app.controller("takePollController", function($scope, getDataFactory,$timeout) {
             if(response.error===0){
                 $scope.record = response.data;
                 console.log($scope.record);
-            }           
+                for (var i = 0; i < response.data.length; i++) {
+                    $scope.localToken[i]=response.data[i]._id;
+                }
+                console.log( $scope.localToken);
+            }
         });
     };
     $scope.tableData(); 
@@ -20,25 +23,17 @@ app.controller("takePollController", function($scope, getDataFactory,$timeout) {
     $scope.submitVote= function(option,data){
         var newdata={"id":data._id,"option_text":option};
         url = '/do_vote';
+        $localStorage.token=data._id;
         console.log(newdata);
         getDataFactory.getData(url).get(newdata).$promise
         .then(function(response) {
              if (response.error===0) {               
                 console.log(response);
-                $scope.alertSuccess = true;
-                $scope.successMsg = option;
                 $timeout(function(){
                     $scope.alertSuccess = false;
-                }, 3000);
+                        $state.go('voteSummary');
+                }, 1000);
             }
-            else{
-                console.log(response);
-                $scope.alerterror = true;
-                $scope.errMsg = response.data;                
-                $timeout(function() {
-                    $scope.alerterror = false;
-                }, 3000);
-            };
         });
     };
 });
