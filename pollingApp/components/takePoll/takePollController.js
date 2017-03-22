@@ -30,6 +30,7 @@ app.controller("takePollController", function($scope, getDataFactory,$timeout) {
                 $scope.alertSuccess = true;
                 $scope.successMsg = option;
                 $timeout(function() {
+                    $scope.option = {};
                     $scope.alertSuccess = false;
                 }, 3000)
             }else{console.log(response)
