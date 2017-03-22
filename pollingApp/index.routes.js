@@ -27,6 +27,6 @@ app.config(function($stateProvider, $urlRouterProvider) {
         .state('takePoll', {
             url: '/takePoll',
             templateUrl: 'components/takePoll/takePoll.html',
-            // controller: 'createPollController',
+            controller: 'takePollController',
         })
 })
