@@ -10,7 +10,7 @@ app.controller("loginController", function($scope, $localStorage, $state, getDat
         getDataFactory.getData(url).get(data).$promise
         .then(function(response) {
              if (response.error==0) {
-                $localStorage.token=response.data._id;
+                // $localStorage.token=response.data._id;
                 console.log(response)
                 $scope.form.$setPristine();
                 $state.go('createPoll');

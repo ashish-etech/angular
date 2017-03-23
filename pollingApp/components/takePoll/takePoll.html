@@ -7,8 +7,11 @@
     	<div class="col-md-8">
             <div class="col-md-10 col-md-offset-2">
                 <center>
-                <h4 style="padding-top: 10px;"><b>Take Poll</b></h4></center>
+                <h4 style="padding-top: 10px;" ng-hide="paginAlert"><b>Take Poll</b></h4>
+                <div ng-show="recordAlert" class="alert-danger">No more Polls Found</div>
+                </center>
                 <table class="table" dir-paginate="data in record | itemsPerPage:2">
+              
                     <tr>
                         <td colspan="2" class="success"><b>Question. &nbsp;</b>{{data.title}} </td>
                     </tr>
@@ -39,7 +42,7 @@
                     </tr>                    
                 </table>
                 <center>
-                    <dir-pagination-controls></dir-pagination-controls>
+                    <dir-pagination-controls ng-hide="paginAlert"></dir-pagination-controls>
                 </center>
             </div>
         </div>

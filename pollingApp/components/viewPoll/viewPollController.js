@@ -10,8 +10,7 @@ app.controller("viewPollController", function($scope, getDataFactory) {
         	if(response.error==0) {
         		$scope.record = response.data;
 				console.log($scope.record);
-            }
-           
+            }           
         })
     }
     $scope.tableData(); 
