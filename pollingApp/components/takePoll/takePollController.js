@@ -42,7 +42,7 @@ app.controller("takePollController", function($scope, getDataFactory,$timeout,$s
              if (response.error===0) {     
                 $timeout(function(){
                     $scope.alertSuccess = false;
-                        $state.go('voteSummary');
+                        $state.go('menuTemplate.voteSummary');
                 }, 1000);
             }
         });

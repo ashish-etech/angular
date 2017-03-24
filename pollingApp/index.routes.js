@@ -14,24 +14,27 @@ app.config(function($stateProvider, $urlRouterProvider) {
             templateUrl: 'components/login/loginForm.html',
             controller: 'loginController',
         })
-        .state('createPoll', {
-            url: '/createPoll',            
+        .state('menuTemplate.voteSummary', {
+            url: '/menuTemplate.voteSummary',
+            templateUrl: 'components/viewVote/voteSummary.html',
+            controller: 'voteSummaryController',
+        })
+         .state('menuTemplate', {
+            url: '/menuTemplate',
+            templateUrl: 'menuTemplate.html',
+            controller: 'templateController',
+        })
+        .state('menuTemplate.createPoll', {
+
             templateUrl: 'components/createPoll/createPoll.html',
             controller: 'createPollController',
         })
-        .state('viewPoll', {
-            url: '/viewPoll',
+        .state('menuTemplate.viewPoll', {
             templateUrl: 'components/viewPoll/viewPoll.html',
             controller: 'viewPollController',
         })
-        .state('takePoll', {
-            url: '/takePoll',
+        .state('menuTemplate.takePoll', {
             templateUrl: 'components/takePoll/takePoll.html',
             controller: 'takePollController',
-        })
-        .state('voteSummary', {
-            url: '/voteSummary',
-            templateUrl: 'components/viewVote/voteSummary.html',
-            controller: 'voteSummaryController',
         })
 })

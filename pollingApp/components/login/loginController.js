@@ -13,7 +13,7 @@ app.controller("loginController", function($scope, $localStorage, $state, getDat
                 // $localStorage.token=response.data._id;
                 console.log(response)
                 $scope.form.$setPristine();
-                $state.go('createPoll');
+                $state.go('menuTemplate.createPoll');
             }else{
                  $scope.alertLoginError = true;
                 $scope.loginErrrMsg = response.data;

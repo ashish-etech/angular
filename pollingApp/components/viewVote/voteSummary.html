@@ -1,42 +1,32 @@
-<div class="container">
-    <div class="row">
-        <div class="col-md-2">
-            <div ng-include src="'menuTemplate.html'"></div>
-        </div>
-
-        <div class="col-md-8">
-            <div class="col-md-10 col-md-offset-2">
-                <center>
-                <h4 style="padding-top: 10px;"><b>Poll Summary</b></h4></center>
-                <table class="table">
-                    <tr>
-                        <td colspan="2"  class="success"><b>Question. &nbsp;</b>{{data.title}} </td>
-                    </tr>
-                    <tr class="info">
-                        <th class="col-sm-8">Options</th>
-                        <th class="col-sm-4">Total no. of Votes</th>
-                    </tr>
-                    <tr class="active">
-                        <td><b>A.</b> &nbsp;{{data.options[0].option}}</td>
-                        <td>{{data.options[0].vote}}</td>
-                    </tr>
-                    <tr class="active">
-                        <td><b>B.</b> &nbsp;{{data.options[1].option}}</td>
-                        <td>{{data.options[1].vote}}</td>
-                    </tr>
-                    <tr class="active">
-                        <td><b>C.</b> &nbsp;{{data.options[2].option}}</td>
-                        <td>{{data.options[2].vote}}</td>
-                    </tr>
-                    <tr class="active">
-                        <td><b>D.</b> &nbsp;{{data.options[3].option}}</td>
-                        <td>{{data.options[3].vote}}</td>
-                    </tr>
-                </table>
-                <center>
-                    <li class="back"><a ui-sref="takePoll">Back to Vote</a></li>
-                </center>
-            </div>          
-        </div>
-    </div>
-</div>
+<div class="col-sm-10">
+    <center>
+    <h3><b>Poll Summary</b></h3></center>
+    <table class="table">
+        <tr>
+            <td colspan="2"  class="success"><b>Question. &nbsp;</b>{{data.title}} </td>
+        </tr>
+        <tr class="info">
+            <th class="col-sm-8">Options</th>
+            <th class="col-sm-4">Total no. of Votes</th>
+        </tr>
+        <tr class="active">
+            <td><b>A.</b> &nbsp;{{data.options[0].option}}</td>
+            <td>{{data.options[0].vote}}</td>
+        </tr>
+        <tr class="active">
+            <td><b>B.</b> &nbsp;{{data.options[1].option}}</td>
+            <td>{{data.options[1].vote}}</td>
+        </tr>
+        <tr class="active">
+            <td><b>C.</b> &nbsp;{{data.options[2].option}}</td>
+            <td>{{data.options[2].vote}}</td>
+        </tr>
+        <tr class="active">
+            <td><b>D.</b> &nbsp;{{data.options[3].option}}</td>
+            <td>{{data.options[3].vote}}</td>
+        </tr>
+    </table>
+    <center>
+        <li class="back"><a ui-sref="menuTemplate.takePoll">Back to Vote</a></li>
+    </center>
+</div>         
