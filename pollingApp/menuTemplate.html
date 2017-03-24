@@ -1,12 +1,16 @@
-<div class="container">
-<div class="row">
-<div class="col-md-2">
-	<ul class="nav nav-pills nav-stacked">
-		<li><a ui-sref="createPoll">Create Poll</a></li>
-		<li><a ui-sref="viewPoll">View Poll</a></li>
-		<li><a ui-sref="takePoll">Take Poll</a></li>
-		<li><a ui-sref="login" ng-click="logOut()">Log Out</li>
-	</ul>
-</div>
-</div>
+<div ng-controller="templateController" >
+	<div id="mySidenav" class="sidenav sidenav-collapse" class="col-md-2" ng-class="{'toggleRight':sidebar,'toggleLeft':!sidebar}">
+		<a href="javascript:void(0)" class="closebtn" ng-click="closeNav()">&times;</a>
+		<ul id="abc">
+			<li ng-class="{ active: aActive}"><a ui-sref="menuTemplate.createPoll" ng-click="select()">Create Poll</a></li>
+			<li ng-class="{ active: bActive}"><a ui-sref="menuTemplate.viewPoll" ng-click="select()">View Poll</a></li>
+			<li ng-class="{ active: cActive}"><a ui-sref="menuTemplate.takePoll" ng-click="select()">Take Poll</a></li>
+			<li ng-class="{ active: dActive}" ><a ui-sref="login" ng-click="select()">Log Out</a></li>
+		</ul>
+	</div>
+	<div class="col-md-10" id="main" ng-class="{'collapseRight':sidebar,'collapseLeft':!sidebar}">
+		<div id="menu" style="font-size:30px;cursor:pointer" ng-click="openNav()" ng-hide="hideMenu">&#9776; Menu</div><br>
+		<div ui-view ></div>
+	</div>
+	
 </div>

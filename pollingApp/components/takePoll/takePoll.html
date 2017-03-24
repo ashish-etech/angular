@@ -1,12 +1,39 @@
-<div class="container">
-    <div class="row">
-        <div class="col-md-2">
-            <div ng-include src="'menuTemplate.html'"></div>
-        </div>
-        <div class="modal-dialog">
-        
-        <h1>Take pOll</h1>
-        </div>
-    </div>
+<div class="col-sm-10">
+    <center>
+        <h4 ng-hide="paginAlert"><b>Take Poll</b></h4>
+    </center>
+    <table class="table" dir-paginate="data in record | itemsPerPage:2">
+        <tr>
+            <td colspan="2" class="success"><b>Question. &nbsp;</b>{{data.title}} </td>
+        </tr>
+        <tr class="active">
+            <td>
+                <input type="radio" name="Vote" ng-model="option" value="{{data.options[0].option}}" unchecked>&nbsp;{{data.options[0].option}}
+            <td>
+        </tr>
+        <tr class="active">
+            <td>
+                <input type="radio" name="Vote" ng-model="option" value="{{data.options[1].option}}" unchecked>&nbsp;{{data.options[1].option}}
+            <td>
+        </tr>
+        <tr class="active">
+           <td>
+                <input type="radio" name="Vote" ng-model="option" value="{{data.options[2].option}}" unchecked>&nbsp;{{data.options[2].option}}
+            <td>
+        </tr>
+        <tr class="active">
+            <td>
+                <input type="radio" name="Vote" ng-model="option" value="{{data.options[3].option}}" unchecked>&nbsp;{{data.options[3].option}}
+            <td>
+        </tr>
+        <tr>
+            <td>
+                <input type="button" class="btn btn-primary" name="submit" value="submit" ng-click="submitVote(option,data)" ng-disabled="!option">
+            </td>
+        </tr>                    
+    </table>
+    <center>
+        <dir-pagination-controls ng-hide="paginAlert" ></dir-pagination-controls>
+    </center>
+    <div ng-show="recordAlert" class="alert-danger">No more Polls Found</div>
 </div>
-    

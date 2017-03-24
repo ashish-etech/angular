@@ -1,5 +1,5 @@
 var app = angular.module("angularForm");
-app.controller("viewPollController", function($scope, getDataFactory,$timeout) {
+app.controller("viewPollController", function($scope, getDataFactory) {
     $scope.record={}
 
     $scope.tableData = function() {
@@ -10,8 +10,7 @@ app.controller("viewPollController", function($scope, getDataFactory,$timeout) {
         	if(response.error==0) {
         		$scope.record = response.data;
 				console.log($scope.record);
-            }
-           
+            }           
         })
     }
     $scope.tableData(); 

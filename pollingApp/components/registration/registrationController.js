@@ -19,7 +19,7 @@ app.controller("registrationController", function($scope, getDataFactory, $timeo
                     $timeout(function() {
                         $scope.alertsuccess = false;
                         $scope.user = {};
-                        $state.go('login');
+                        $state.go('menuTemplate.login');
                     }, 3000)
                 }else{
                     console.log(response)

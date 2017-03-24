@@ -10,11 +10,10 @@ app.controller("loginController", function($scope, $localStorage, $state, getDat
         getDataFactory.getData(url).get(data).$promise
         .then(function(response) {
              if (response.error==0) {
-                $localStorage.token=response.data._id;
+                // $localStorage.token=response.data._id;
                 console.log(response)
                 $scope.form.$setPristine();
-                $scope.user = {};
-                $state.go('createPoll');
+                $state.go('menuTemplate.createPoll');
             }else{
                  $scope.alertLoginError = true;
                 $scope.loginErrrMsg = response.data;

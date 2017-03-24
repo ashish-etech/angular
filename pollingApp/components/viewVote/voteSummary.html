@@ -1,14 +1,13 @@
 <div class="col-sm-10">
     <center>
-        <h4 style="padding-top: 10px;"><b>View Poll Data</b></h4>
-    </center>
-    <table class="table" dir-paginate="data in record | itemsPerPage:2">
+    <h3><b>Poll Summary</b></h3></center>
+    <table class="table">
         <tr>
             <td colspan="2"  class="success"><b>Question. &nbsp;</b>{{data.title}} </td>
         </tr>
         <tr class="info">
-            <th class="col-sm-9">Options</th>
-            <th class="col-sm-3">Votes</th>
+            <th class="col-sm-8">Options</th>
+            <th class="col-sm-4">Total no. of Votes</th>
         </tr>
         <tr class="active">
             <td><b>A.</b> &nbsp;{{data.options[0].option}}</td>
@@ -28,8 +27,6 @@
         </tr>
     </table>
     <center>
-        <dir-pagination-controls></dir-pagination-controls>
+        <li class="back"><a ui-sref="menuTemplate.takePoll">Back to Vote</a></li>
     </center>
-</div>		
-        
- 
+</div>         
