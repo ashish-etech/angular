@@ -1,16 +1,17 @@
 <div ng-controller="templateController" >
-	<div id="mySidenav" class="sidenav sidenav-collapse" class="col-md-2" ng-class="{'toggleRight':sidebar,'toggleLeft':!sidebar}">
-		<a href="javascript:void(0)" class="closebtn" ng-click="closeNav()">&times;</a>
-		<ul id="abc">
-			<li ng-class="{ active: aActive}"><a ui-sref="menuTemplate.createPoll" ng-click="select()">Create Poll</a></li>
-			<li ng-class="{ active: bActive}"><a ui-sref="menuTemplate.viewPoll" ng-click="select()">View Poll</a></li>
-			<li ng-class="{ active: cActive}"><a ui-sref="menuTemplate.takePoll" ng-click="select()">Take Poll</a></li>
-			<li ng-class="{ active: dActive}" ><a ui-sref="login" ng-click="select()">Log Out</a></li>
+
+	<div id="mySidenav" class="sidenav"  ng-class="{'toggleRight':sidebar,'toggleLeft':!sidebar}">
+		<ul >
+			<li ng-class="{ Active: isActive('/menuTemplate/createPoll')}"><a ui-sref="menuTemplate.createPoll">Create Poll</a></li>
+			<li ng-class="{ Active: isActive('/menuTemplate/viewPoll')}"><a ui-sref="menuTemplate.viewPoll">View Poll</a></li>
+			<li ng-class="{ Active: isActive('/menuTemplate/takePoll')}"><a ui-sref="menuTemplate.takePoll">Take Poll</a></li>
+			<li ><a ui-sref="login" >Log Out</a></li>
 		</ul>
 	</div>
+
 	<div class="col-md-10" id="main" ng-class="{'collapseRight':sidebar,'collapseLeft':!sidebar}">
-		<div id="menu" style="font-size:30px;cursor:pointer" ng-click="openNav()" ng-hide="hideMenu">&#9776; Menu</div><br>
+		<button id="menu" ng-click="toggleNav()">&#9776; Menu</button><br><br>
 		<div ui-view ></div>
-	</div>
-	
+	</div>	
+
 </div>

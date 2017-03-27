@@ -46,7 +46,7 @@ h3 {
 }    
 body {
     font-family: "Lato", sans-serif;
-    transition: background-color .5s;
+    /*transition: background-color .5s;*/
     background-color: #00BCD4;
 }
 .sidenav {
@@ -67,26 +67,21 @@ body {
     font-size: 20px;
     color: #818181;
     display: block;
-    transition: 0.3s
 }
 .sidenav a:hover, .offcanvas a:focus{
     color: #f1f1f1;
 }
-.sidenav .closebtn {
-    position: absolute;
-    top: 0;
-    right: 20px;
-    font-size: 36px;
-}
 #menu{
-    padding-left: 8%;
     background-color: #00BCD4;
+    font-size:20px;
+    cursor:pointer;
+    border: none;
 }
 #main {
     transition: margin-left .5s;
 }
 .toggleRight{
-  min-width: 200px;
+  width: 200px;
 }
 .collapseRight{
   margin-left: 200px;
@@ -97,11 +92,22 @@ body {
 .collapseLeft{
   margin-left: 0%;
 }
+p{
+    float: right;
+    cursor: pointer;
+}
+.Active{
+    background-color: white;
+    margin-right: 40px;
+}
 li{
   list-style: none;
   text-decoration: none;
   margin-left: 0px;
 }
+
+
+
 @media screen and (max-height: 450px) {
     .sidenav a {
         font-size: 4px;
@@ -114,4 +120,21 @@ li{
       background-color: #111;
       transition: 0.5s;
     }  
+}
+
+/*spinner on click button*/
+
+.glyphicon.spinning {
+    animation: spin 1s infinite linear;
+    -webkit-animation: spin2 1s infinite linear;
+}
+
+@keyframes spin {
+    from { transform: scale(1) rotate(0deg);}
+    to { transform: scale(1) rotate(360deg);}
+}
+
+@-webkit-keyframes spin2 {
+    from { -webkit-transform: rotate(0deg);}
+    to { -webkit-transform: rotate(360deg);}
 }

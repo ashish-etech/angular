@@ -1,6 +1,7 @@
 var app = angular.module("angularForm");
  var localToken=[];
 app.controller("takePollController", function($scope, getDataFactory,$timeout,$state,$localStorage) {
+    $scope.loadingVote = false;
     $scope.recordAlert=false;
     $scope.paginAlert=false;
     $scope.record=[];   
@@ -31,6 +32,8 @@ app.controller("takePollController", function($scope, getDataFactory,$timeout,$s
     $scope.tableData(); 
 
     $scope.submitVote= function(option,data){
+        $scope.loadingVote = true;
+
         var newdata={"id":data._id,"option_text":option};
         url = '/do_vote';
         
@@ -39,10 +42,11 @@ app.controller("takePollController", function($scope, getDataFactory,$timeout,$s
 
         getDataFactory.getData(url).get(newdata).$promise
         .then(function(response) {
-             if (response.error===0) {     
+            $scope.loadingVote = false;
+            if (response.error===0) {     
                 $timeout(function(){
                     $scope.alertSuccess = false;
-                        $state.go('menuTemplate.voteSummary');
+                    $state.go('menuTemplate.voteSummary');
                 }, 1000);
             }
         });
