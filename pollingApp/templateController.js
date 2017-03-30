@@ -1,15 +1,16 @@
 var app = angular.module("angularForm");
 app.controller("templateController", function($scope,$location){
-
     $scope.hideMenu=true;
     
-    if ($scope.sidebar) {
+    console.log('Sidebar->',$scope.sidebar)
+    if ($scope.sidebar=="true") {
         $scope.count=0;
     }else{
         $scope.count=1;
     };
 
     $scope.toggleNav=function() {
+
         $scope.count++;
         if ($scope.count%2==0) {
             $scope.sidebar=true;
@@ -17,6 +18,7 @@ app.controller("templateController", function($scope,$location){
         else{
             $scope.sidebar=false;
         }
+         console.log('Sidebar->',$scope.sidebar)
     };
 
     $scope.isActive = function (viewLocation) { 
