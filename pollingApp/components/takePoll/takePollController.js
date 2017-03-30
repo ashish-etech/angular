@@ -1,5 +1,5 @@
 var app = angular.module("angularForm");
- var localToken=[];
+var localToken=[];
 app.controller("takePollController", function($scope, getDataFactory,$timeout,$state,$localStorage) {
     $scope.loadingVote = false;
     $scope.recordAlert=false;
@@ -31,23 +31,20 @@ app.controller("takePollController", function($scope, getDataFactory,$timeout,$s
     };
     $scope.tableData(); 
 
-    $scope.submitVote= function(option,data){
-        $scope.loadingVote = true;
+    $scope.submitVote= function(option,data){        
 
         var newdata={"id":data._id,"option_text":option};
         url = '/do_vote';
         
         localToken.push(data._id);      
         $localStorage.token=data._id;
-
+        $scope.loadingVote = true;
         getDataFactory.getData(url).get(newdata).$promise
         .then(function(response) {
             $scope.loadingVote = false;
-            if (response.error===0) {     
-                $timeout(function(){
-                    $scope.alertSuccess = false;
-                    $state.go('menuTemplate.voteSummary');
-                }, 1000);
+            if (response.error===0) {
+                $scope.alertSuccess = false;
+                $state.go('menuTemplate.voteSummary');
             }
         });
     };
