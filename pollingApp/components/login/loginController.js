@@ -5,8 +5,8 @@ app.controller("loginController", function($scope, $localStorage, $state, getDat
     $scope.entity = {
                 name : "Form Data", 
                 fields :[
-                        {type: "text", name: "Username", label: "User Name" , required: true, data:""}, 
-                        {type: "password", name: "password", label: "Password" , min: 6, max:20, data:"", required: true,},
+                        {type: "text", name: "Username", label: "User Name" ,autocomplete:"off", required: true, data:""}, 
+                        {type: "password", name: "password", label: "Password" ,autocomplete:"off", min: 6, max:20, data:"", required: true,},
                     ],
                     button: "Login"
             };
