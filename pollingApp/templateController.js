@@ -1,45 +1,45 @@
 var app = angular.module("angularForm");
-app.controller("templateController", function($scope,$location){
-    $scope.hideMenu=true;
-    
-    console.log('Sidebar->',$scope.sidebar)
-    if ($scope.sidebar=="true") {
-        $scope.count=0;
-    }else{
-        $scope.count=1;
-    };
+app.controller("templateController", function($scope,$location,$localStorage,$state){
+    if ($localStorage.id==null){
+        $state.go('login'); 
+    }
+    else{
 
-    $scope.toggleNav=function() {
+        $scope.toggleNav=function() {
+            if ($scope.sidebar==true) {
+                $scope.sidebar=false;
+            }
+            else{
+                $scope.sidebar=true;
+            }
+        };
 
-        $scope.count++;
-        if ($scope.count%2==0) {
-            $scope.sidebar=true;
+        $scope.isActive = function (viewLocation) { 
+            var Active = (viewLocation === $location.path());
+            return Active;
+        };
+
+        // sidebar ng-show
+        window.onresize=function(){
+            $scope.change();
+            $scope.$digest();
+        };
+        $scope.change=function(){
+            if (window.innerWidth<=998) {
+                console.log(window.innerWidth)
+                $scope.sidebar=false;
+            }
+            else{
+                $scope.sidebar=true;
+            }console.log('Sidebar->',$scope.sidebar)
+        };
+
+        $scope.logout=function(){
+            $localStorage.role=null;
+            $localStorage.id=null;
+            $state.go('login'); 
         }
-        else{
-            $scope.sidebar=false;
-        }
-         console.log('Sidebar->',$scope.sidebar)
-    };
 
-    $scope.isActive = function (viewLocation) { 
-        var Active = (viewLocation === $location.path());
-        return Active;
-    };
-
-    // sidebar ng-show
-    window.onresize=function(){
         $scope.change();
-        $scope.$digest();
-    };
-    $scope.change=function(){
-        if (window.innerWidth<=998) {
-            console.log(window.innerWidth)
-            $scope.sidebar=false;
-        }
-        else{
-            $scope.sidebar=true;
-        }
-    };
-
-    $scope.change();
+    }
 });

@@ -22,8 +22,10 @@ app.controller("loginController", function($scope, $localStorage, $state, getDat
         .then(function(response) {
             $scope.spinner=false;
             if (response.error==0) {
-                console.log(response.data.role)
+                console.log(response)
                 $localStorage.role= response.data.role;
+                $localStorage.id= response.data._id;
+                console.log($localStorage.id)
                 $state.go('menuTemplate.createPoll');                
             }
             else{

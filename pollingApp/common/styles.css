@@ -41,8 +41,6 @@ h3 {
 }
 .alert-danger{
     font-weight: bold;
-    padding: 10%;
-    margin:5%;
 }    
 body {
     font-family: "Lato", sans-serif;
@@ -59,7 +57,7 @@ body {
     background-color: #111;
     overflow: hidden;
     transition: 0.5s;
-    padding-top: 5%;
+    padding-top: 3%;
 }
 .sidenav a {
     padding: 5%;
@@ -67,9 +65,10 @@ body {
     font-size: 20px;
     color: #818181;
     display: block;
+    cursor: pointer;
 }
 .sidenav a:hover, .offcanvas a:focus{
-    color: #f1f1f1;
+    color: white;
 }
 #menu{
     background-color: #00BCD4;
@@ -97,8 +96,9 @@ p{
     cursor: pointer;
 }
 .Active{
-    background-color: white;
-    margin-right: 40px;
+    background-color: #464343;
+    margin: 0px 4px 0px -36px;
+    padding: 0 49px 0 35px; 
 }
 li{
   list-style: none;
