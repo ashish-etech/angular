@@ -1,9 +1,6 @@
 var app = angular.module("angularForm");
 app.controller("createPollController", function($scope, getDataFactory,$timeout,$localStorage,$state) {
    
-    if ($localStorage.id==null){
-        $state.go('login'); 
-    }else{
     $scope.alertSuccess = false;
     $scope.alertError = false;
     $scope.object={ques:'',opt1:'',opt2:'',opt3:'',opt4:''}
@@ -48,5 +45,4 @@ app.controller("createPollController", function($scope, getDataFactory,$timeout,
             }
         })            
     }  
-}
 })
