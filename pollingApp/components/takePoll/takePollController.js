@@ -1,6 +1,7 @@
 var app = angular.module("angularForm");
 var localToken=[];
 app.controller("takePollController", function($scope, getDataFactory,$timeout,$state,$localStorage) {
+   
     $scope.loadingVote = false;
     $scope.recordAlert=false;
     $scope.paginAlert=false;

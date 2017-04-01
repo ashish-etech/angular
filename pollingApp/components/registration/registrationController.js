@@ -23,7 +23,7 @@ app.controller("registrationController", function($scope, getDataFactory, $timeo
         var data={
             'username':Obj[0].data,
             'password':Obj[1].data,
-            'role':Obj[2].data
+            'role':Obj[2].data.name
         }
         $scope.spinner=spin;
         url='/add_user';

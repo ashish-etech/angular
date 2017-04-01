@@ -1,6 +1,6 @@
 var app = angular.module("angularForm");
-app.controller("createPollController", function($scope, getDataFactory,$timeout) {
-    // $scope.spinner=false;
+app.controller("createPollController", function($scope, getDataFactory,$timeout,$localStorage,$state) {
+   
     $scope.alertSuccess = false;
     $scope.alertError = false;
     $scope.object={ques:'',opt1:'',opt2:'',opt3:'',opt4:''}

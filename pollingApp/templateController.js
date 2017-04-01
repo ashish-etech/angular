@@ -1,24 +1,12 @@
 var app = angular.module("angularForm");
-app.controller("templateController", function($scope,$location){
-    $scope.hideMenu=true;
-    
-    console.log('Sidebar->',$scope.sidebar)
-    if ($scope.sidebar=="true") {
-        $scope.count=0;
-    }else{
-        $scope.count=1;
-    };
-
-    $scope.toggleNav=function() {
-
-        $scope.count++;
-        if ($scope.count%2==0) {
-            $scope.sidebar=true;
-        }
-        else{
+app.controller("templateController", function($scope,$location,$localStorage,$state){
+$scope.toggleNav=function() {
+        if ($scope.sidebar==true) {
             $scope.sidebar=false;
         }
-         console.log('Sidebar->',$scope.sidebar)
+        else{
+            $scope.sidebar=true;
+        }
     };
 
     $scope.isActive = function (viewLocation) { 
@@ -38,8 +26,15 @@ app.controller("templateController", function($scope,$location){
         }
         else{
             $scope.sidebar=true;
-        }
+        }console.log('Sidebar->',$scope.sidebar)
     };
 
+    $scope.logout=function(){
+        $localStorage.role=null;
+        $localStorage.id=null;
+        $state.go('login'); 
+    }
+
     $scope.change();
+   
 });

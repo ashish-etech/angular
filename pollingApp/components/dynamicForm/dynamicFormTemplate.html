@@ -1,8 +1,5 @@
-
-
 <form name="myForm" ng-submit="submit()" novalidate>
 <div ng-repeat="field in form.fields">    
-<ng-form name="form" class="form" >
     <!-- TEXT FIELDS -->        
     <div ng-if="field.type=='text'" class="form-group" ng-class="{ 'has-error' : form.{{field.name}}.$invalid && !form.{{field.name}}.$pristine }">
         <label for="text">{{field.label}}</label>
@@ -22,7 +19,6 @@
             <select class="form-control" name="{{field.name}}" ng-model="field.data"  ng-options="option.name for option in field.options" required></select >
         <span ng-show="form.{{field.name}}.$dirty && form.{{field.name}}.$error.required" class="help-block">Please enter Your {{field.label}}!</span>
     </div>
-</ng-form>
 </div>
     <br/>
         <button type="submit" class="btn btn-success" ng-disabled="myForm.$invalid">{{form.button}} &nbsp;<span ng-show="spinner"><i class="glyphicon glyphicon-refresh spinning"></i></span></button>
