@@ -1,5 +1,5 @@
 var app = angular.module("angularForm");
-app.controller("viewPollController", function($scope, getDataFactory,$localStorage) {
+app.controller("viewPollController", function($scope,$location, getDataFactory,$localStorage) {
     
     $scope.record={}
     $scope.showDeleteBtn=false;
@@ -35,6 +35,5 @@ app.controller("viewPollController", function($scope, getDataFactory,$localStora
             }           
         })
     };
-
     $scope.tableData();   
 })

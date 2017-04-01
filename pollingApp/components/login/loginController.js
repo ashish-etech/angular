@@ -22,10 +22,9 @@ app.controller("loginController", function($scope, $localStorage, $state, getDat
         .then(function(response) {
             $scope.spinner=false;
             if (response.error==0) {
-                console.log(response)
+                console.log(response.data)
                 $localStorage.role= response.data.role;
                 $localStorage.id= response.data._id;
-                console.log($localStorage.id)
                 $state.go('menuTemplate.createPoll');                
             }
             else{
@@ -38,6 +37,9 @@ app.controller("loginController", function($scope, $localStorage, $state, getDat
     $scope.change = function() {
         $scope.alertLoginError = false;
     };
+    // if ($localStorage.id){
+    //     $state.go('menuTemplate.createPoll')
+    // }
 });
 
 
