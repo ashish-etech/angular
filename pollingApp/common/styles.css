@@ -108,7 +108,7 @@ li{
 
 
 
-@media screen and (max-height: 450px) {
+@media screen and (max-width: 450px) {
     .sidenav a {
         font-size: 4px;
     }
